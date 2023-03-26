@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.AddHappyPlaceActivity"
+    android:background="@color/white">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/tool_bar_add_happy_places"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@color/design_default_color_primary"
+        android:theme="@style/CustomToolBarStyle"/>
+
+
+    <ScrollView
+        android:id="@+id/sv_add_places"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tool_bar_add_happy_places"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_add_places"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp">
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/ti_title"
+                android:layout_width="match_parent"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                app:hintTextColor="@color/design_default_color_primary"
+                app:boxStrokeColor="@color/design_default_color_primary"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/et_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColorHint="@color/black"
+                    android:textSize="16sp"
+                    android:backgroundTint="@color/white"
+                    android:hint="Title"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/ti_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                app:hintTextColor="@color/design_default_color_primary"
+                app:boxStrokeColor="@color/design_default_color_primary"
+                app:layout_constraintTop_toBottomOf="@+id/ti_title"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/et_description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColorHint="@color/black"
+                    android:textSize="16sp"
+                    android:backgroundTint="@color/white"
+                    android:hint="Description"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/ti_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_marginTop="5dp"
+                app:hintTextColor="@color/design_default_color_primary"
+                app:boxStrokeColor="@color/design_default_color_primary"
+                app:layout_constraintTop_toBottomOf="@+id/ti_description"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/et_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColorHint="@color/black"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:textSize="16sp"
+                    android:backgroundTint="@color/white"
+                    android:hint="Date"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/ti_location"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                app:hintTextColor="@color/design_default_color_primary"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                app:boxStrokeColor="@color/design_default_color_primary"
+                app:layout_constraintTop_toBottomOf="@+id/ti_date"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/et_location"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColorHint="@color/black"
+                    android:textSize="16sp"
+                    android:focusableInTouchMode="false"
+                    android:focusable="false"
+                    android:backgroundTint="@color/white"
+                    android:hint="Location"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/tv_current_location"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/add_place_select_current_location_marginTop"
+                android:background="@drawable/background_image_view_border"
+                android:foreground="?attr/selectableItemBackground"
+                android:gravity="center"
+                android:padding="@dimen/add_place_select_current_location_padding"
+                android:text="Select Your Current Location"
+                android:textColor="@color/colorAccent"
+                android:textSize="@dimen/add_place_select_current_location_textsize"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ti_location" />
+
+
+            <LinearLayout
+                android:id="@+id/ll_image_pick"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/tv_current_location"
+                android:orientation="horizontal"
+                android:layout_marginTop="15dp"
+                android:gravity="center"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <ImageView
+                    android:id="@+id/iv_image_pick"
+                    android:layout_width="0dp"
+                    android:layout_height="200dp"
+                    android:layout_weight="0.5"
+                    android:padding="5dp"
+                    android:contentDescription="Image Pick"
+                    android:src="@drawable/add_screen_image_placeholder"
+                    android:background="@drawable/image_picker_stroke_background"/>
+
+
+                <TextView
+                    android:id="@+id/tv_add_image"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:gravity="center_horizontal"
+                    android:text="ADD IMAGE"
+                    android:textSize="25sp"
+                    android:textColor="@color/design_default_color_primary"
+                    android:layout_gravity="center_vertical"/>
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btn_save"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="SAVE"
+                android:textColor="@color/white"
+                android:backgroundTint="@color/design_default_color_primary"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@+id/ll_image_pick"
+                android:background="@drawable/image_picker_stroke_background"
+                android:layout_marginTop="20dp"/>
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
